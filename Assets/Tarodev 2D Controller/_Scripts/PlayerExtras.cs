@@ -15,6 +15,7 @@ namespace TarodevController {
         public FrameInput Input { get; }
         public bool JumpingThisFrame { get; }
         public bool LandingThisFrame { get; }
+        public bool RunningThisFrame { get; }
         public Vector3 RawMovement { get; }
         public bool Grounded { get; }
     }

@@ -37,7 +37,16 @@ namespace TarodevController {
             _anim.transform.rotation = Quaternion.RotateTowards(_anim.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
 
             // Speed up idle while running
-            _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));
+            if (_player.Grounded && _player.RunningThisFrame)
+            {
+                _anim.SetBool(RunKey, true);
+                /*_anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));*/
+            }
+            else
+            {
+                _anim.SetBool(RunKey, false);
+            }
+            
 
             // Splat
             if (_player.LandingThisFrame) {
@@ -99,6 +108,7 @@ namespace TarodevController {
         private static readonly int GroundedKey = Animator.StringToHash("Grounded");
         private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
+        private static readonly int RunKey = Animator.StringToHash("Run");
 
         #endregion
     }

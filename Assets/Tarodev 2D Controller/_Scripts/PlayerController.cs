@@ -16,6 +16,7 @@ namespace TarodevController {
         public FrameInput Input { get; private set; }
         public bool JumpingThisFrame { get; private set; }
         public bool LandingThisFrame { get; private set; }
+        public bool RunningThisFrame { get; private set; }
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
 
@@ -152,7 +153,9 @@ namespace TarodevController {
         [SerializeField] private float _apexBonus = 2;
 
         private void CalculateWalk() {
-            if (Input.X != 0) {
+            if (Input.X != 0)
+            {
+                RunningThisFrame = true;
                 // Set horizontal move speed
                 _currentHorizontalSpeed += Input.X * _acceleration * Time.deltaTime;
 
@@ -166,6 +169,8 @@ namespace TarodevController {
             else {
                 // No input. Let's slow the character down
                 _currentHorizontalSpeed = Mathf.MoveTowards(_currentHorizontalSpeed, 0, _deAcceleration * Time.deltaTime);
+                
+                RunningThisFrame = false;
             }
 
             if (_currentHorizontalSpeed > 0 && _colRight || _currentHorizontalSpeed < 0 && _colLeft) {
