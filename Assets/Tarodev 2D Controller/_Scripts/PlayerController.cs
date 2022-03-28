@@ -17,6 +17,7 @@ namespace TarodevController {
         public bool JumpingThisFrame { get; private set; }
         public bool LandingThisFrame { get; private set; }
         public bool RunningThisFrame { get; private set; }
+		public bool AttackingThisFrame { get; private set; }
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
 
@@ -50,6 +51,7 @@ namespace TarodevController {
 
         private void GatherInput() {
             Input = new FrameInput {
+				MainAttack = UnityEngine.Input.GetKey("k"),
                 JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
                 JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
                 X = UnityEngine.Input.GetAxisRaw("Horizontal")
@@ -57,6 +59,11 @@ namespace TarodevController {
             if (Input.JumpDown) {
                 _lastJumpPressed = Time.time;
             }
+			if (Input.MainAttack) {
+				AttackingThisFrame = true;
+			} else {
+				AttackingThisFrame = false;
+			}
         }
 
         #endregion

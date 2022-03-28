@@ -47,6 +47,15 @@ namespace TarodevController {
                 _anim.SetBool(RunKey, false);
             }
             
+            if (_player.AttackingThisFrame)
+            {
+                _anim.SetBool(AttackKey, true);
+                /*_anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));*/
+            }
+            else
+            {
+                _anim.SetBool(AttackKey, false);
+            }
 
             // Splat
             if (_player.LandingThisFrame) {
@@ -109,6 +118,7 @@ namespace TarodevController {
         private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
         private static readonly int RunKey = Animator.StringToHash("Run");
+        private static readonly int AttackKey = Animator.StringToHash("Attack");
 
         #endregion
     }
