@@ -21,12 +21,19 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("isJumping", true);
         }
     }
 
+    public void OnLanding()
+    {
+        jump = false;
+        animator.SetBool("isJumping", false);
+    }
+    
     private void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        jump = false;
+        //jump = false;
     }
 }
