@@ -5,23 +5,24 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public Animator animator;
+    public Animator animator; //Animator del personaje
 
-    public Transform attackPoint;
+    public Transform attackPoint; //Posicion del objeto que nos ayudara a saber si estamos atacando
 
-    public float attackRange = 0.5f;
+    public float attackRange = 0.5f; //Rango del ataque (en que posicion con respecto al personaje se encuentra)
 
-    public int attakDamage = 40;
-    public LayerMask enemyLayers;
+    public int attakDamage = 40; //Daño de ataque
+    public LayerMask enemyLayers; // Las layers que nos ayudaran a identificar a los enemigos
 
-    public float attackRate = 2f;
+    public float attackRate = 2f; //Cuantos ataques podemos hacer 
 
-    private float nextAttackTime = 0f;
-    // Update is called once per frame
+    private float nextAttackTime = 0f; //Tiempo para determinar si podemos volver a atacar
     void Update()
     {
+        // Esto esta bien fumado, pero es basicamente si el tiempo es mayor a lo que es nuestro tiempo de ataque
         if (Time.time >= nextAttackTime)
         {
+            // Y si dentro de ese tiempo estamos presionando la tecla para atacar, entonces realiza el ataque y añadimos mas tiempo
             if (Input.GetKeyDown(KeyCode.K))
             {
                 Attack();
@@ -31,6 +32,7 @@ public class PlayerCombat : MonoBehaviour
         
     }
 
+    //Funcion para atacar, manda llamar a la animacion y colecciona la cantidad de enemigos dentro del rango de ataque para poder mandar llamar su funcion de TakeDamage
     void Attack()
     {
         animator.SetTrigger("Attack");
@@ -43,6 +45,7 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    // Esto es solo para visualizar el rango de ataque con respecto al objeto (atack point)
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;

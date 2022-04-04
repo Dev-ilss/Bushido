@@ -24057,6 +24057,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 57562959987705659, guid: 521aa8edb415c90e9a6c6dda3597d31a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 173142967580023800, guid: 521aa8edb415c90e9a6c6dda3597d31a, type: 3}
       propertyPath: m_GravityScale
       value: 4
@@ -34690,7 +34694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2002368141953120626, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2002368141953120637, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: m_RootOrder
@@ -34748,25 +34752,45 @@ PrefabInstance:
       propertyPath: m_Lens.OrthographicSize
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2002368142149006675, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002368142149006685, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.545789
+      value: 5.011527
       objectReference: {fileID: 0}
     - target: {fileID: 2002368142149006685, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: m_LocalPosition.y
       value: -7.7139997
       objectReference: {fileID: 0}
     - target: {fileID: 2002368142537755333, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002368142537755333, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.545789
+      value: 7.246667
       objectReference: {fileID: 0}
     - target: {fileID: 2002368142537755333, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.7139997
+      value: -8.669333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002368142537755352, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
+      propertyPath: field of view
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002368142537755352, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002368142537755352, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2002368142537755352, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4795471178438405163, guid: d43b766958919cc2881a292203b3f8b6, type: 3}
       propertyPath: m_LocalScale.x

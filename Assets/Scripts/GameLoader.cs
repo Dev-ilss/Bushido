@@ -7,6 +7,7 @@ public class GameLoader : MonoBehaviour
 {
     public void StartMainScene()
     {
+        //Cambiar de escena
         SceneManager.LoadScene("Woods");
     }
 }
